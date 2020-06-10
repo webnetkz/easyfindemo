@@ -2,16 +2,12 @@
     session_start();
     require_once 'app/DB.php';
     
-    $sqlA = 'SELECT * FROM agents';
-    $resA = $pdo->query($sqlA);
-    $resA = $resA->fetchAll(PDO::FETCH_ASSOC);
-
-    $sqlI = 'SELECT * FROM items';
-    $resI = $pdo->query($sqlI);
-    $resI = $resI->fetchAll(PDO::FETCH_ASSOC);
+    $sql = 'SELECT * FROM invoice';
+    $res = $pdo->query($sql);
+    $res = $res->fetchAll(PDO::FETCH_ASSOC);
 
     //echo '<pre>';
-    //var_dump($resA);
+    //var_dump($res);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,25 +24,12 @@
                 echo '<p class="msg">'. $_SESSION['msg'] .'</p>';
             }
         ?>
-        <form action="app/querys/appendInvoice.php" method="POST">
-            <p>Новый счет на оплату</p>
-            <select name="invAgent" class="inp">
-                <?php
-                    foreach($resA as $k => $v) {
-                        echo '<option value="'.$v['name'].'">'.$v['name'].'</option>';
-                    }
-                ?>
-            </select>
-            <select name="invItem" class="inp">
-                <?php
-                    foreach($resI as $k => $v) {
-                        echo '<option value="'.$v['name'].'">'.$v['name'].'</option>';
-                    }
-                ?>
-            </select>
-            <input type="number" class="inp" placeholder="Кол-во" name="invValue">
-            <button id="appendA" class="inp" type="submit" name="appendA">Создать</button>
-        </form>
+        <?php
+            foreach($res as $k => $v) {
+                echo "<button onclick='location.href = \"tamplates/waybill.php\"' class=\"inp\">".$v['today'], $v['agent']."</button>";
+            }
+        ?>
+    
     </div>
     <footer>
     <a href="invoice.php">
