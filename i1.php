@@ -26,7 +26,7 @@
         ?>
         <?php
             foreach($res as $k => $v) {
-                echo "<button onclick='location.href = \"tamplates/invoice.php\"' class=\"inp\">".$v['today'], $v['agent']."</button>";
+                echo "<button onclick='location.href = \"tamplates/invoice.php\"' class=\"inp\">".$v['today'] .'/'. $v['agent']."</button>";
             }
         ?>
     

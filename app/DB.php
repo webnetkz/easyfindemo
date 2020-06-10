@@ -2,10 +2,10 @@
 
     // Данные для подключения к базе данных
     $driver = 'mysql';
-    $host = 'localhost';
-    $db_name = 'easyfin';
-    $db_user = 'root';
-    $db_pass = '';
+    $host = 'srv-pleskdb28.ps.kz:3306 ';
+    $db_name = 'webnetkz_easyfin';
+    $db_user = 'webnetkz_easyfin';
+    $db_pass = 'fepipe7611!!QQ';
     $charset = 'utf8';
     $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
