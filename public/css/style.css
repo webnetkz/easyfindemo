@@ -12,7 +12,7 @@ body {
     padding: 10vw;
     animation: showContent 500ms linear;
     box-shadow: 0 0 10px rgb(200, 200, 210);
-    overflow-y: auto;
+    overflow-y: auto!important;
 }
 .inp {
     box-sizing: border-box;
