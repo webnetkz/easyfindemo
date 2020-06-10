@@ -6,13 +6,12 @@ body {
     font-family: sans-serif;
 }
 .content {
-    position: fixed;
     top: 0;
     left: 0;
     padding: 10vw;
     animation: showContent 500ms linear;
     box-shadow: 0 0 10px rgb(200, 200, 210);
-    overflow-y: auto!important;
+    overflow-x: hidden;
 }
 .inp {
     box-sizing: border-box;
